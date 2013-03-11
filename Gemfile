@@ -5,6 +5,11 @@ gem 'rails', '3.2.12'
 group :development, :test do
   gem 'sqlite3', '1.3.5'
   gem 'rspec-rails', '2.11.0'
+  gem 'guard-rspec', '1.2.1'
+  gem 'guard-cucumber'
+  gem 'guard-spork'
+  gem 'guard-bundler'
+  gem 'spork'
 end
 
 # Gems used only for assets and not required
@@ -19,6 +24,12 @@ gem 'jquery-rails', '2.0.2'
 
 group :test do
   gem 'capybara', '1.1.2'
+  gem 'rb-fsevent', '0.9.1', :require => false
+
+  gem         'capybara-webkit', :require => false
+  gem 'terminal-notifier-guard', :require => false # Notifications on Mac OS X Mountain Lion Notification Center
+  gem               'guard-pow', :require => false # Restarts Pow server automatically after changes that require this
+  gem                  'powder', :require => false # Syntatic sugar for Pow server
 end
 
 group :production do
