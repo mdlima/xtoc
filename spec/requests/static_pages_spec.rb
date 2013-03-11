@@ -9,10 +9,10 @@ describe "Static pages" do
       page.should have_selector('h1', :text => 'Home')
     end
 
-    it "should have the title 'Home'" do
+    it "should have the title 'xtoc'" do
       visit '/static_pages/home'
       page.should have_selector('title',
-                        :text => "xtoc | Home")
+                        :text => "xtoc")
     end
   end
 
