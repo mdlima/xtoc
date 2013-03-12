@@ -22,6 +22,11 @@ end
 
 gem 'bootstrap-sass', '2.1'
 gem   'jquery-rails', '2.0.2'
+gem           'haml', '4.0.0'
+gem           'sass', '3.2.7'
+gem     'haml-rails', '0.4'
+gem      'rdiscount', '2.0.7.1'
+
 
 group :test do
   gem   'capybara', '1.1.2'

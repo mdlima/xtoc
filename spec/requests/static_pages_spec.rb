@@ -26,7 +26,7 @@ describe "Static pages" do
     it "should have the title 'Help'" do
       visit '/static_pages/help'
       page.should have_selector('title',
-                        :text => "xtoc | Help")
+                    :text => "xtoc | Help")
     end
   end
 
