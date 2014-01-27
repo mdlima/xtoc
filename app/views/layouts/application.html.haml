@@ -1,0 +1,44 @@
+!!! 5
+/[if lt IE 7] <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en">
+/[if IE 7] <html class="no-js lt-ie9 lt-ie8" lang="en">
+/[if IE 8] <html class="no-js lt-ie9" lang="en">
+<!--[if gt IE 8]><!-->
+%html.no-js{:lang => 'en'}
+  / <![endif]
+  %head
+    %meta{:charset => 'utf-8'}/
+    %meta{:content => 'IE=edge,chrome=1', 'http-equiv' => 'X-UA-Compatible'}/
+    
+    %meta{:content => (content_for?(:description) ? yield(:description) : 'xtoc, simple warehouse management system.'), :name => 'description'}/
+    %meta{:content => 'Marcio Lima', :name => 'author'}/
+    
+    %meta{:content => 'width=device-width', :name => 'viewport'}/
+    %meta{:content => 'yes', :name => 'apple-mobile-web-app-capable'}/
+    %meta{:content => 'black-translucent', :name => 'apple-mobile-web-app-status-bar-style'}/
+    
+    %title
+      = full_title(yield(:title))
+    
+    = stylesheet_link_tag 'application', :media => 'all', 'data-turbolinks-track' => true
+    /[if lt IE 9]
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    = csrf_meta_tags
+    = yield :head
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true #, :async => true
+
+  %body
+    /[if lt IE 7] <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    %header.navbar.navbar-fixed-top.navbar-inverse
+      %nav.navbar-inner
+        .container
+          = render 'layouts/navigation'
+
+    #main{:role => 'main'}
+      .container
+        = render 'layouts/messages'
+        = yield
+        = render 'layouts/footer'
+
+      / ! end of .container
+    / ! end of #main
+    
